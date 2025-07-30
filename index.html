@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahabharata: The Greatest Epic Ever Told</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Page -->
+    <section id="landing" class="landing-page">
+        <div class="particles"></div>
+        <div class="landing-content">
+            <h1 class="epic-title">महाभारत</h1>
+            <h2 class="epic-subtitle">Mahabharata</h2>
+            <p class="epic-description">The Greatest Epic Ever Told</p>
+            <p class="epic-subtext">An Interactive Journey Through Ancient India's Greatest Story</p>
+            <div class="epic-stats">
+                <div class="stat">
+                    <span class="stat-number">100,000+</span>
+                    <span class="stat-label">Verses</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1.8M</span>
+                    <span class="stat-label">Words</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Parvas</span>
+                </div>
+            </div>
+            <button class="btn btn--primary btn--lg cta-button" onclick="beginJourney()">
+                Begin the Journey
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="https://pplx-res.cloudinary.com/image/upload/v1748632243/pplx_project_search_images/2d786bec156cf7b8b951d0e4654db19f4f23b2b1.jpg" alt="Krishna delivering Gita to Arjuna" class="hero-img">
+        </div>
+    </section>
 
+    <!-- Main Application -->
+    <div id="app" class="app hidden">
+        <!-- Navigation Header -->
+        <header class="app-header">
+            <nav class="main-nav">
+                <div class="nav-brand">
+                    <h2>Mahabharata</h2>
+                </div>
+                <div class="nav-links">
+                    <a href="#" onclick="showChapters()" class="nav-link">Chapters</a>
+                    <a href="#" onclick="showCharacters()" class="nav-link">Characters</a>
+                    <a href="#" onclick="showGita()" class="nav-link">Bhagavad Gita</a>
+                    <a href="#" onclick="showQuiz()" class="nav-link">Quiz</a>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Chapter Selection -->
+        <section id="chapters" class="chapters-section">
+            <div class="container">
+                <h2 class="section-title">Choose Your Path Through the Epic</h2>
+                <div class="chapters-grid">
+                    <div class="chapter-card" onclick="showChapter('adi')">
+                        <div class="chapter-number">1</div>
+                        <h3>Adi Parva</h3>
+                        <p>The Book of the Beginning</p>
+                        <span class="chapter-status">Start Here</span>
+                    </div>
+                    <div class="chapter-card" onclick="showChapter('sabha')">
+                        <div class="chapter-number">2</div>
+                        <h3>Sabha Parva</h3>
+                        <p>The Book of the Assembly Hall</p>
+                        <span class="chapter-status">Available</span>
+                    </div>
+                    <div class="chapter-card" onclick="showChapter('vana')">
+                        <div class="chapter-number">3</div>
+                        <h3>Vana Parva</h3>
+                        <p>The Book of the Forest</p>
+                        <span class="chapter-status">Available</span>
+                    </div>
+                    <div class="chapter-card" onclick="showChapter('bhishma')">
+                        <div class="chapter-number">6</div>
+                        <h3>Bhishma Parva</h3>
+                        <p>The Book of Bhishma</p>
+                        <span class="chapter-status">Available</span>
+                    </div>
+                    <div class="chapter-card" onclick="showChapter('shanti')">
+                        <div class="chapter-number">12</div>
+                        <h3>Shanti Parva</h3>
+                        <p>The Book of Peace</p>
+                        <span class="chapter-status">Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter Content -->
+        <section id="chapter-content" class="chapter-content hidden">
+            <div class="container">
+                <div class="chapter-header">
+                    <button class="btn btn--outline" onclick="showChapters()">← Back to Chapters</button>
+                    <div class="chapter-navigation">
+                        <button class="btn btn--secondary" onclick="previousChapter()">← Previous</button>
+                        <button class="btn btn--secondary" onclick="nextChapter()">Next →</button>
+                    </div>
+                </div>
+                <div id="chapter-story" class="chapter-story"></div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="characters-section hidden">
+            <div class="container">
+                <h2 class="section-title">Meet the Epic Characters</h2>
+                <div class="characters-grid">
+                    <div class="character-card" onclick="showCharacterModal('krishna')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #4169E1, #1e3a8a);"></div>
+                        </div>
+                        <h3>Krishna</h3>
+                        <p>The Divine Guide</p>
+                    </div>
+                    <div class="character-card" onclick="showCharacterModal('arjuna')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #FF6B35, #dc2626);"></div>
+                        </div>
+                        <h3>Arjuna</h3>
+                        <p>The Greatest Archer</p>
+                    </div>
+                    <div class="character-card" onclick="showCharacterModal('yudhishthira')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #DAA520, #a16207);"></div>
+                        </div>
+                        <h3>Yudhishthira</h3>
+                        <p>The Righteous King</p>
+                    </div>
+                    <div class="character-card" onclick="showCharacterModal('bhima')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #DC143C, #991b1b);"></div>
+                        </div>
+                        <h3>Bhima</h3>
+                        <p>The Mighty Warrior</p>
+                    </div>
+                    <div class="character-card" onclick="showCharacterModal('draupadi')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #9932CC, #7c2d12);"></div>
+                        </div>
+                        <h3>Draupadi</h3>
+                        <p>The Queen of Pandavas</p>
+                    </div>
+                    <div class="character-card" onclick="showCharacterModal('duryodhana')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #8B0000, #450a0a);"></div>
+                        </div>
+                        <h3>Duryodhana</h3>
+                        <p>The Ambitious Prince</p>
+                    </div>
+                    <div class="character-card" onclick="showCharacterModal('karna')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #FF4500, #c2410c);"></div>
+                        </div>
+                        <h3>Karna</h3>
+                        <p>The Noble Warrior</p>
+                    </div>
+                    <div class="character-card" onclick="showCharacterModal('bhishma')">
+                        <div class="character-image">
+                            <div class="character-avatar" style="background: linear-gradient(135deg, #2F4F4F, #374151);"></div>
+                        </div>
+                        <h3>Bhishma</h3>
+                        <p>The Grand Patriarch</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bhagavad Gita Section -->
+        <section id="gita" class="gita-section hidden">
+            <div class="container">
+                <h2 class="section-title">The Bhagavad Gita</h2>
+                <div class="gita-content">
+                    <div class="gita-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1748632243/pplx_project_search_images/2d786bec156cf7b8b951d0e4654db19f4f23b2b1.jpg" alt="Krishna teaching Arjuna">
+                    </div>
+                    <div class="gita-text">
+                        <h3>Divine Teachings on the Battlefield</h3>
+                        <p>As the great war was about to begin, Arjuna was overwhelmed with doubt and moral confusion. It was then that Lord Krishna delivered the timeless teachings known as the Bhagavad Gita.</p>
+                        
+                        <div class="quote-card">
+                            <blockquote>
+                                "You have a right to perform your prescribed duty, but not to the fruits of action."
+                            </blockquote>
+                            <cite>- Krishna to Arjuna</cite>
+                        </div>
+
+                        <div class="quote-card">
+                            <blockquote>
+                                "Whatever happened was good. What is happening is good. What will happen shall also be good."
+                            </blockquote>
+                            <cite>- Krishna's wisdom</cite>
+                        </div>
+
+                        <h4>Key Teachings:</h4>
+                        <ul class="teachings-list">
+                            <li>The importance of performing one's duty without attachment to results</li>
+                            <li>The eternal nature of the soul</li>
+                            <li>Three paths to liberation: Knowledge, Devotion, and Action</li>
+                            <li>The concept of dharma in difficult situations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="quiz-section hidden">
+            <div class="container">
+                <h2 class="section-title">Which Mahabharata Character Are You?</h2>
+                <div class="quiz-container">
+                    <div id="quiz-question" class="quiz-question"></div>
+                    <div id="quiz-options" class="quiz-options"></div>
+                    <div id="quiz-result" class="quiz-result hidden"></div>
+                    <button id="quiz-next" class="btn btn--primary hidden" onclick="nextQuestion()">Next Question</button>
+                    <button id="quiz-restart" class="btn btn--secondary hidden" onclick="startQuiz()">Take Quiz Again</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Character Modal -->
+    <div id="character-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeCharacterModal()">&times;</span>
+            <div id="modal-character-content"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
