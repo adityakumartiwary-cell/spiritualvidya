@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="SpiritualVidya – videos, books and courses on meditation, yoga and world wisdom traditions.">
+  <title>SpiritualVidya – Spiritual Learning Platform</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Icons (FontAwesome 6 free CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- ========= Header / Navigation ========= -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="logo" href="#">Spiritual<span>Vidya</span></a>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- small-screen hamburger -->
+        <button id="nav-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========= Hero ========= -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Ancient Wisdom for the Modern Seeker</h1>
+      <p>Explore meditation, yoga, sacred texts and global spiritual teachings—all in one place.</p>
+      <a href="#videos" class="btn-primary">Start Learning</a>
+    </div>
+    <div class="om-symbol">ॐ</div>
+  </section>
+
+  <!-- ========= Video Library ========= -->
+  <section id="videos" class="section">
+    <div class="container">
+      <h2 class="section-title">Spiritual Video Library</h2>
+
+      <!---- Filters -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="meditation">Meditation</button>
+        <button class="filter-btn" data-filter="yoga">Yoga</button>
+        <button class="filter-btn" data-filter="philosophy">Philosophy</button>
+      </div>
+
+      <!---- Video Grid -->
+      <div class="video-grid">
+        <!-- Meditation video -->
+        <div class="video-item meditation">
+          <iframe src="https://www.youtube.com/embed/inpok4MKVLM" title="Guided Meditation" loading="lazy"></iframe>
+          <h3 class="vid-title">10-Minute Guided Meditation</h3>
+        </div>
+
+        <!-- Yoga video -->
+        <div class="video-item yoga">
+          <iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" title="Morning Yoga" loading="lazy"></iframe>
+          <h3 class="vid-title">Morning Yoga Flow</h3>
+        </div>
+
+        <!-- Philosophy video -->
+        <div class="video-item philosophy">
+          <iframe src="https://www.youtube.com/embed/IGy2slyD0c4" title="Bhagavad Gita Talk" loading="lazy"></iframe>
+          <h3 class="vid-title">Bhagavad Gita – Chapter 2 Overview</h3>
+        </div>
+
+        <!-- add more items as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= Book Library ========= -->
+  <section id="books" class="section alt-section">
+    <div class="container">
+      <h2 class="section-title">Digital Sacred Library</h2>
+
+      <div class="book-grid">
+        <div class="book-card">
+          <h3>Bhagavad Gita</h3>
+          <p>Translated by Swami Chinmayananda</p>
+          <a href="https://example.com/bhagavad-gita.pdf" class="btn-secondary" target="_blank">Download PDF</a>
+        </div>
+
+        <div class="book-card">
+          <h3>Yoga Sutras of Patañjali</h3>
+          <p>Commentary by Swami Satchidananda</p>
+          <a href="https://example.com/yoga-sutras.pdf" class="btn-secondary" target="_blank">Download PDF</a>
+        </div>
+
+        <div class="book-card">
+          <h3>Tao Te Ching</h3>
+          <p>Translated by Gia-Fu Feng & Jane English</p>
+          <a href="https://example.com/tao-te-ching.pdf" class="btn-secondary" target="_blank">Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= Courses ========= -->
+  <section id="courses" class="section">
+    <div class="container">
+      <h2 class="section-title">Interactive Courses</h2>
+
+      <div class="course-list">
+        <div class="course-card">
+          <h3>Meditation Mastery 101</h3>
+          <p class="course-meta"><i class="fa-solid fa-clock"></i> 4 weeks &nbsp;|&nbsp; <i class="fa-solid fa-layer-group"></i> Beginner</p>
+          <p>Step-by-step program covering breath, mantra and mindfulness techniques.</p>
+          <button class="btn-primary enrol-btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+          <h3>Essentials of Vedic Philosophy</h3>
+          <p class="course-meta"><i class="fa-solid fa-clock"></i> 6 weeks &nbsp;|&nbsp; <i class="fa-solid fa-layer-group"></i> Intermediate</p>
+          <p>Delve into Upanishads, Sankhya, Yoga and Vedanta schools with guided readings.</p>
+          <button class="btn-primary enrol-btn">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= Contact ========= -->
+  <section id="contact" class="section alt-section">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+
+      <form class="contact-form" action="#" method="post">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <textarea name="message" rows="5" placeholder="Your message"></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========= Footer ========= -->
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <p>&copy; 2025 SpiritualVidya. All Rights Reserved.</p>
+      <div class="social">
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>
